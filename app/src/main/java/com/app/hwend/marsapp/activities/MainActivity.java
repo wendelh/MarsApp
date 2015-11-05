@@ -1,4 +1,4 @@
-package com.app.hwend.marsapp;
+package com.app.hwend.marsapp.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,8 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.app.hwend.marsapp.R;
 import com.app.hwend.marsapp.maasAPI.MaasRequestTask;
 import com.app.hwend.marsapp.model.Report;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseInstallation;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 import com.squareup.otto.ThreadEnforcer;
@@ -24,12 +28,17 @@ public class MainActivity extends Activity {
     @Bind(R.id.textView_atmo_opacity) TextView textView_atmo_opacity;
     @Bind(R.id.textView_max_temp) TextView textView_max_temp;
     @Bind(R.id.textView_min_temp) TextView textView_min_temp;
+    @Bind(R.id.terrestrial_date) TextView terrestrial_date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Parse track statistics and set up for PNS
+        ParseInstallation.getCurrentInstallation().saveInBackground();
+        ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
         // Register on OTTO-BUS
         bus.register(this);
@@ -40,6 +49,7 @@ public class MainActivity extends Activity {
         textView_atmo_opacity.setText("waiting for data from curiosity rover on mars...");
         textView_max_temp.setText("waiting for data from curiosity rover on mars...");
         textView_min_temp.setText("waiting for data from curiosity rover on mars...");
+        terrestrial_date.setText("waiting for data from curiosity rover on mars...");
     }
 
     @Override
@@ -77,6 +87,7 @@ public class MainActivity extends Activity {
         textView_atmo_opacity.setText(report.getAtmo_opacity());
         textView_max_temp.setText(report.getMax_temp());
         textView_min_temp.setText(report.getMin_temp());
+        terrestrial_date.setText(report.getTerrestrial_date());
     }
 
 

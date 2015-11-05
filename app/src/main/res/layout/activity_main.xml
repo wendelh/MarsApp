@@ -12,7 +12,30 @@
         android:layout_height="fill_parent">
 
         <TextView
+            android:id="@+id/headline_current_date"
+            android:textColor="@color/black"
+            android:paddingTop="30dp"
+            android:text="Current Received Date:"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/terrestrial_date"
+            android:layout_below="@+id/headline_current_date"
+            android:paddingTop="10dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:textSize="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
             android:id="@+id/headline_current_weather"
+            android:layout_below="@+id/terrestrial_date"
             android:textColor="@color/black"
             android:paddingTop="30dp"
             android:text="Current Weather:"
