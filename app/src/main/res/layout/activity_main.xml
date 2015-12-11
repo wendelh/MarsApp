@@ -92,13 +92,14 @@
 
         <TextView
             android:id="@+id/textView_min_temp"
-            android:layout_below="@+id/headline_min_temp"
             android:paddingTop="10dp"
+            android:layout_below="@+id/headline_min_temp"
             android:textColor="@color/black"
             android:layout_centerHorizontal="true"
             android:textSize="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </RelativeLayout>
 
 </RelativeLayout>

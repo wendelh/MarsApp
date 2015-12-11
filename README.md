@@ -23,5 +23,6 @@ This library will use for binding views.
 
 #### [parse] (https://www.parse.com)
 
-- Parse will use for Push-Notification
-- Parse will use for Crash-Reporting
+- Parse Push-Notification
+- Parse Crash-Reporting
+- Parse Analytics
