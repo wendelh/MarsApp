@@ -1,3 +1,4 @@
+
 # Built application files
 *.apk
 *.ap_
@@ -29,6 +30,10 @@ proguard/
 
 # Android Studio
 .idea
+
+# Keys for Parse etc
+# Keys.java
+
 
 # Log Files
 *.log

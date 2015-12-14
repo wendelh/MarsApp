@@ -12,9 +12,9 @@ import com.squareup.otto.Bus;
 
 import org.json.JSONObject;
 
-import utils.Constants;
+import com.app.hwend.marsapp.utils.Constants;
 
-public class MaasRequestTask extends AsyncTask <Void, String, String>{
+public class MaasRequestTask extends AsyncTask <Void, String, String> {
 
     private final static String TAG = "MaasRequestTask";
     private final Bus eventBus;
