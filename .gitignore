@@ -32,7 +32,7 @@ proguard/
 .idea
 
 # Keys for Parse etc
-# Keys.java
+Keys.java
 
 
 # Log Files
